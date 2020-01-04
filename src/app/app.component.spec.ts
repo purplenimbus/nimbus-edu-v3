@@ -1,17 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgZorroAntdModule,
       ],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
+
   }));
 
   it('should create the app', () => {
@@ -20,16 +23,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nimbus-edu-v3'`, () => {
+  it('should set the appName',() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('nimbus-edu-v3');
+    expect(fixture.debugElement.componentInstance.appName)
+      .toEqual('Nimbus Edu');
   });
 
-  it('should render title', () => {
+  it('should set isCollapsed',() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nimbus-edu-v3 app is running!');
+    expect(fixture.debugElement.componentInstance.isCollapsed)
+      .toEqual(false);
   });
 });
