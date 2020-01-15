@@ -23,15 +23,19 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should set the appName',() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.debugElement.componentInstance.appName)
-      .toEqual('Nimbus Edu');
-  });
-
   it('should set isCollapsed',() => {
     const fixture = TestBed.createComponent(AppComponent);
     expect(fixture.debugElement.componentInstance.isCollapsed)
       .toEqual(false);
+  });
+
+  fdescribe('#toggleMenu',() => {
+    const component = TestBed.createComponent(AppComponent).debugElement.componentInstance;
+    component.toggleMenu();
+
+    it('should toggle isCollapsed',() => {
+    expect(component.isCollapsed)
+      .toEqual(true);
+    });
   });
 });

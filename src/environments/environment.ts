@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+	appName: 'Nimbus Edu',
+	appLogoUrl: 'https://ng.ant.design/assets/img/logo.svg',
+  production: false,
 };
 
 /*
